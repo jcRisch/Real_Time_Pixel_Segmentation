@@ -1,16 +1,6 @@
 import cv2
 import numpy as np
-import os
-import six.moves.urllib as urllib
-import sys
-import tarfile
 import tensorflow as tf
-import zipfile
-from PIL import Image
-from collections import defaultdict
-from io import StringIO
-from matplotlib import pyplot as plt
-from moviepy.editor import VideoFileClip
 from object_detection.utils import label_map_util
 from object_detection.utils import ops as utils_ops
 from object_detection.utils import visualization_utils as vis_util
@@ -111,7 +101,6 @@ if __name__ == '__main__':
             while True:
                 # Get the last frame
                 frame = cap.read()[1]
-                image_np = np.asarray(frame)
                 # Process last img
                 new_frame = detect_objects(image_np, sess)
                 # Display the resulting frame
